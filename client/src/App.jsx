@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Componants/Navbar'
+import Navbar from './Components/Navbar'
 import {Route, Routes, useLocation} from 'react-router-dom'
 import Landing from './Pages/LandingPage'
 import Movies from './Pages/Movies'
