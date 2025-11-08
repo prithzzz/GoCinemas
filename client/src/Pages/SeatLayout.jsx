@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { assets,dummyShowsData, dummyDateTimeData } from '../assets/assets'
 import Loading from '../Components/Loading'
-import {ClockIcon} from 'lucide-react'
+import {ArrowRightIcon, ClockIcon} from 'lucide-react'
 import isoTimeFormat from '../Components/lib/isoTimeFormat'
 import BlurCircle from '..Components/BlurCircle'
 import toast from 'react-hot-toast'
@@ -79,9 +79,29 @@ const SeatLayout = () => {
             <h1 className='text-2xl font-semibold mb-4'> Select your seat</h1>
             <img src={assets.screenImage} alt="screen" />
             <p className='text-gray-400 text-sm mb-6'>SCREEN SIDE</p>
-            <div>
-                
+
+            <div className='flex flex-col items-center mt-10 text-xs text-gray-300'>
+                <div className='grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-2 mb-6'>
+                    {groupRows[0].map(row => renderSeats(row))}
+                </div>
+
+                <div className='grid grid-cols-2 gap-11'>
+                    {groupRows.slice(1).map((group,idx) => (
+                        <div key={idx}>
+                            {group.map(row => renderSeats(row))}
+                        </div>
+                    ))}
+                </div>
             </div>
+
+
+
+            <button onClick={()=> navigate('/my-bookings')} className='flex items-center gap-1 mt-20 px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer active:scale-95'>
+                proceed to checkout
+                <ArrowRightIcon strokeWidth={3} className='w-4 h-4'/>
+            </button>
+
+
         </div>
     </div>
   ) : (
