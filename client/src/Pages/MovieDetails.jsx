@@ -46,11 +46,15 @@ useEffect(()=> {
 
                 <div>
                     <button>
-                        <a href="#dateSelect" className='px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer active:scale-95'> Book Now</a>
+                        <a href="#dateSelect" className='px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer active:scale-95'> Book Tickets</a>
                     </button>
                 </div>
             </div>
         </div>
+
+        <DateSelect dateTime={show.dateTime} id={id}/>
+
+
 
 
     </div>
