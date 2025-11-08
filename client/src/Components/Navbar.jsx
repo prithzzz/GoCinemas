@@ -9,7 +9,6 @@ const Navbar = () => {
       <Link to='/' className='max-md:flex-1'>
         <img src={assets.logo} alt="" classname='w-36 h-auto' />
       </Link>
-
       <div>
 
       </div>
