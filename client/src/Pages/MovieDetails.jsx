@@ -1,7 +1,11 @@
 import React from 'react'
-import {useParams} from 'recat-router-dom'
+import {useNavigate,useParams} from 'react-router-dom'
 import { dummyDateTimeData,dummyShowsData } from '../assets/assets'
 import { StarIcon } from 'lucide-react'
+import BlurCircle from '../Components/BlurCircle'
+import timeFormat from '../lib/timeFormat'
+import DateSelect from '../Components/DateSelect'
+import MovieCard from '../Components/MovieCard'
 
 const MovieDetails = () => {
     const {id}=useParams()
@@ -9,10 +13,13 @@ const MovieDetails = () => {
 
     const getShow =async()=> {
         const show=dummyShowsData.find(show=> show._id ===id)
-        setShow({
-            movie:show,
-            dataTime:dummyDateTimeData
-        })
+        if (show)
+            {
+                setShow({
+                    movie:show,
+                    dataTime:dummyDateTimeData
+                })
+            }
     }
 
 useEffect(()=> {
@@ -58,7 +65,7 @@ useEffect(()=> {
 
 
     </div>
-  ) : <div> Loading ..</div>
+  ) : <Loading/>
 }
 
 export default MovieDetails
