@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Componants/Navbar'
+import Navbar from './Components/Navbar'
 import {Route, Routes, useLocation} from 'react-router-dom'
 import Landing from './Pages/LandingPage'
 import Movies from './Pages/Movies'
@@ -7,7 +7,7 @@ import MovieDetails from './Pages/MovieDetails'
 import SeatSelection from './Pages/SeatSelection'
 import MyBookings from './Pages/MyBookings'
 import { Toaster } from 'react-hot-toast'
-import Footer from './Componants/Footer'
+import Footer from './Components/Footer'
 
 
 const App = () => {
