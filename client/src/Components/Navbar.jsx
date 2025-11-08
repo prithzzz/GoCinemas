@@ -10,8 +10,12 @@ const Navbar = () => {
       <Link to="/" className="navbar-logo">
         <img src={assets.logo} alt="GoCinemas Logo" className="logo-img" />
       </Link>
-      <div>
 
+      <div className="navbar-links">
+        <X className="close-icon" />
+        <Link to="/">Home</Link>
+        <Link to="/movies">Movies</Link>
+        <Link to="/">My Tickets</Link>
       </div>
 
       <div className="navbar-actions">
