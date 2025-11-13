@@ -1,0 +1,24 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* h-[80vh] */
+}
+
+.loading-spinner {
+  height: 3.5rem; /* h-14 */
+  width: 3.5rem;  /* w-14 */
+  border: 2px solid #e5e7eb; /* default border */
+  border-top: 2px solid #e50914; /* border-t-primary */
+  border-radius: 50%; /* rounded-full */
+  animation: spin 1s linear infinite; /* animate-spin */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

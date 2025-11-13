@@ -1,0 +1,91 @@
+.date-select-container {
+  padding-top: 7.5rem; /* pt-30 */
+}
+
+.date-select-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* gap-10 */
+  padding: 2rem; /* p-8 */
+  background-color: rgba(229, 9, 20, 0.1); /* bg-primary/10 */
+  border: 1px solid rgba(229, 9, 20, 0.2); /* border-primary/20 */
+  border-radius: 12px; /* rounded-lg */
+}
+
+@media (min-width: 768px) {
+  .date-select-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.date-select-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 1.25rem; /* mt-5 */
+}
+
+.date-buttons-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* gap-6 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.chevron-icon {
+  cursor: pointer;
+}
+
+.dates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; /* gap-4 */
+  max-width: 24rem; /* md:max-w-lg */
+}
+
+@media (min-width: 768px) {
+  .dates-grid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 24rem;
+  }
+}
+
+.date-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem; /* h-14 */
+  width: 3.5rem; /* w-14 */
+  aspect-ratio: 1 / 1;
+  border-radius: 0.5rem; /* rounded */
+  cursor: pointer;
+  border: 1px solid rgba(229, 9, 20, 0.7);
+  background-color: transparent;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.date-btn.selected {
+  background-color: var(--primary-color, #e50914);
+  color: white;
+  border: none;
+}
+
+.book-now-btn {
+  margin-top: 1.5rem; /* mt-6 */
+  padding: 0.5rem 2rem; /* px-8 py-2 */
+  background-color: var(--primary-color, #e50914);
+  color: white;
+  border-radius: 0.5rem; /* rounded */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: rgba(229, 9, 20, 0.9); /* bg-primary/90 */
+}

@@ -1,0 +1,117 @@
+/* Main Navbar Container */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+/* Logo */
+.navbar-logo .logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #e50914; /* red hover color */
+}
+
+/* Close Icon (visible only in mobile menu) */
+.close-icon {
+  display: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Navbar Actions (right side) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Search Icon */
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Login Button */
+.login-btn {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #b00610;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  color: white;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 70%;
+    height: 100vh;
+    gap: 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .navbar-links.open {
+    right: 0;
+  }
+
+  .close-icon {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}

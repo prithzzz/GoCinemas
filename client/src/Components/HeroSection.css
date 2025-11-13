@@ -1,0 +1,91 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  height: 100vh;
+  background-image: url("/backgroundImage.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive padding */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 0 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 0 9rem;
+  }
+}
+
+.hero-logo {
+  max-height: 2.75rem;
+  margin-top: 5rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  max-width: 28rem;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 70px;
+    line-height: 1.15;
+  }
+}
+
+.hero-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #d1d5db; /* gray-300 */
+}
+
+.hero-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.hero-icon {
+  width: 18px;
+  height: 18px;
+  color: #d1d5db;
+}
+
+.hero-description {
+  max-width: 28rem;
+  color: #d1d5db;
+}
+
+.hero-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--primary-color, #e50914);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: var(--primary-color-dull, #b00610);
+}
+
+.hero-button-icon {
+  width: 20px;
+  height: 20px;
+}

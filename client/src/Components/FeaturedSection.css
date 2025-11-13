@@ -1,0 +1,105 @@
+/* Container Padding & Overflow */
+.featured-section {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .featured-section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured-section {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .featured-section {
+    padding-left: 11rem;
+    padding-right: 11rem;
+  }
+}
+
+/* Header */
+.featured-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+}
+
+.featured-title {
+  font-weight: 500;
+  font-size: 1.125rem; /* text-lg */
+  color: #d1d5db; /* gray-300 */
+}
+
+/* View All Button */
+.view-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem; /* text-sm */
+  color: #d1d5db;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover .arrow-icon {
+  transform: translateX(2px); /* approximate Tailwind 0.5 spacing */
+}
+
+/* Arrow Icon */
+.arrow-icon {
+  width: 1.125rem; /* w-4.5 */
+  height: 1.125rem; /* h-4.5 */
+  transition: transform 0.3s ease;
+}
+
+/* Movies Grid */
+.featured-movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: flex-start;
+}
+
+@media (max-width: 640px) {
+  .featured-movies {
+    justify-content: center;
+  }
+}
+
+/* Footer Button */
+.featured-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.show-more-btn {
+  padding: 0.75rem 2.5rem; /* px-10 py-3 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  border-radius: 6px; /* rounded-md */
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color, #e50914);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: var(--primary-color-dull, #b00610);
+}

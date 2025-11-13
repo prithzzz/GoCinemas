@@ -1,0 +1,173 @@
+.seat-layout-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px 30px 24px;
+}
+
+@media (min-width: 768px) {
+  .seat-layout-container {
+    flex-direction: row;
+    padding: 50px 64px;
+  }
+}
+
+/* Timings container */
+.timings-container {
+  width: 240px;
+  background-color: rgba(248, 69, 101, 0.1);
+  border: 1px solid rgba(248, 69, 101, 0.2);
+  border-radius: 12px;
+  padding: 18px;
+  position: sticky;
+  top: 30px;
+  height: max-content;
+}
+
+.timings-title {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  padding-left: 24px;
+}
+
+.timings-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timing-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timing-item:hover {
+  background-color: rgba(248, 69, 101, 0.2);
+}
+
+.selected-time {
+  background-color: #F84565;
+  color: white;
+}
+
+.clock-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Seat layout main */
+.seats-main {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.seats-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.screen-img {
+  width: 100%;
+  max-width: 600px;
+}
+
+.screen-text {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+}
+
+/* Seat groups */
+.seat-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #D1D5DB;
+  margin-top: 40px;
+}
+
+.group-top {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.group-rest {
+  display: flex;
+  gap: 44px;
+}
+
+.group-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Seats */
+.seat-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.seat-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.seat-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(248, 69, 101, 0.6);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.seat-btn.selected {
+  background-color: #F84565;
+  color: white;
+}
+
+/* Checkout button */
+.checkout-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 80px;
+  padding: 12px 40px;
+  font-size: 0.875rem;
+  background-color: #F84565;
+  color: white;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.checkout-btn:hover {
+  background-color: #D63854;
+}
+
+.checkout-btn:active {
+  transform: scale(0.95);
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+}
