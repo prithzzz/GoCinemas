@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets';
-import { Menu, Search, X, TicketPlus } from 'lucide-react';
+import { Menu, X, TicketPlus } from 'lucide-react';
 import { useClerk, UserButton, useUser } from '@clerk/clerk-react';
 import './Navbar.css';
 
@@ -13,39 +13,21 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      {/* LOGO */}
       <Link to="/" className="navbar-logo">
         <img src={assets.logo} alt="GoCinemas Logo" className="logo-img" />
       </Link>
 
-      {/* Desktop Links */}
-      <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
-        <X className="close-icon" onClick={() => setIsOpen(false)} />
-
-        <Link
-          onClick={() => { scrollTo(0, 0); setIsOpen(false); }}
-          to="/"
-        >
-          Home
-        </Link>
-
-        <Link
-          onClick={() => { scrollTo(0, 0); setIsOpen(false); }}
-          to="/search"     
-        >
-          Movies
-        </Link>
-
-        <Link
-          onClick={() => { scrollTo(0, 0); setIsOpen(false); }}
-          to="/my-tickets"
-        >
-          My Tickets
-        </Link>
-      </div>
-
+      {/* RIGHT SECTION: LINKS + LOGIN BUTTON */}
       <div className="navbar-actions">
-        <Search className="search-icon" />
+        {/* NAV LINKS (now aligned beside Login) */}
+        <div className="navbar-links desktop-only">
+          <Link onClick={() => scrollTo(0, 0)} to="/">Home</Link>
+          <Link onClick={() => scrollTo(0, 0)} to="/search">Movies</Link>
+          <Link onClick={() => scrollTo(0, 0)} to="/my-tickets">My Tickets</Link>
+        </div>
 
+        {/* LOGIN / USER MENU */}
         {!user ? (
           <button onClick={openSignIn} className="login-btn">Login</button>
         ) : (
@@ -61,8 +43,17 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Mobile Menu Icon */}
+      {/* MOBILE MENU BUTTON */}
       <Menu className="menu-icon" onClick={() => setIsOpen(!isOpen)} />
+
+      {/* MOBILE NAV LINKS */}
+      <div className={`navbar-links mobile-menu ${isOpen ? 'open' : ''}`}>
+        <X className="close-icon" onClick={() => setIsOpen(false)} />
+        
+        <Link onClick={() => { scrollTo(0,0); setIsOpen(false); }} to="/">Home</Link>
+        <Link onClick={() => { scrollTo(0,0); setIsOpen(false); }} to="/search">Movies</Link>
+        <Link onClick={() => { scrollTo(0,0); setIsOpen(false); }} to="/my-tickets">My Tickets</Link>
+      </div>
     </div>
   );
 };
