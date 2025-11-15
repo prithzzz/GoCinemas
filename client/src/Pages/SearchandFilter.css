@@ -51,7 +51,7 @@
   font-size: 1.3rem;
 }
 
-/* SECTION TITLES */
+/* SECTION */
 .sf-section {
   margin-top: 2.5rem;
 }
@@ -62,13 +62,22 @@
   margin-bottom: 1rem;
 }
 
-/* HORIZONTAL SCROLL AREA */
+/* NEW: wrapper containing left arrow, chips, right arrow */
+.sf-row-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* chip scroll area */
 .sf-scroll-row {
   display: flex;
   align-items: center;
   gap: 1rem;
   overflow-x: auto;
   padding-bottom: 0.5rem;
+  flex: 1; /* expands row to full width */
 }
 
 .sf-scroll-row::-webkit-scrollbar {
@@ -92,29 +101,19 @@
   color: white;
 }
 
-/* SCROLL ARROWS */
-.sf-scroll-btn {
+/* INLINE ARROW BUTTONS */
+.sf-arrow-btn {
   background-color: #b3b3b3;
   padding: 0.8rem;
   border-radius: 50%;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.sf-scroll-btn-floating {
-  background-color: #b3b3b3;
-  padding: 0.8rem;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-/* MOVIE GRID */
+/* movie grid */
 .sf-movies-grid {
   display: flex;
   flex-wrap: wrap;
