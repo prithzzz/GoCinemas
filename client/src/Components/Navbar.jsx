@@ -20,13 +20,32 @@ const Navbar = () => {
       {/* Desktop Links */}
       <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
         <X className="close-icon" onClick={() => setIsOpen(false)} />
-        <Link onClick={() => { scrollTo(0, 0); setIsOpen(false); }} to="/">Home</Link>
-        <Link onClick={() => { scrollTo(0, 0); setIsOpen(false); }} to="/movies">Movies</Link>
-        <Link onClick={() => { scrollTo(0, 0); setIsOpen(false); }} to="/my-tickets">My Tickets</Link>
+
+        <Link
+          onClick={() => { scrollTo(0, 0); setIsOpen(false); }}
+          to="/"
+        >
+          Home
+        </Link>
+
+        <Link
+          onClick={() => { scrollTo(0, 0); setIsOpen(false); }}
+          to="/search"     
+        >
+          Movies
+        </Link>
+
+        <Link
+          onClick={() => { scrollTo(0, 0); setIsOpen(false); }}
+          to="/my-tickets"
+        >
+          My Tickets
+        </Link>
       </div>
 
       <div className="navbar-actions">
         <Search className="search-icon" />
+
         {!user ? (
           <button onClick={openSignIn} className="login-btn">Login</button>
         ) : (

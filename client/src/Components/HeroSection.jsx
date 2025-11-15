@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 import { assets } from "../assets/assets";
 
-
 const HeroSection = () => {
   const navigate = useNavigate();
 
@@ -30,7 +29,7 @@ const HeroSection = () => {
       <p className="hero-description">para about movie</p>
 
       <button
-        onClick={() => navigate('/movies')}
+        onClick={() => navigate('/search')}   
         className="hero-button"
       >
         Explore Movies
