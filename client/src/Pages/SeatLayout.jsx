@@ -17,6 +17,14 @@ const SeatLayout = () => {
 
   const navigate = useNavigate();
 
+  const expensiveRows = ["D", "F", "H", "J"]; 
+  const cheapRows = ["A", "B", "C", "E", "G", "I"]; 
+
+  const getSeatPrice = (seatId) => {
+    const row = seatId[0];
+    return expensiveRows.includes(row) ? 400 : 300;
+  };
+
   const getShow = async () => {
     const foundShow = dummyShowsData.find(show => show._id === id);
     if (foundShow) {
@@ -27,9 +35,6 @@ const SeatLayout = () => {
   const handleSeatClick = (seatId) => {
     if (!selectedTime) {
       return toast("Please select time first");
-    }
-    if (!selectedSeats.includes(seatId) && selectedSeats.length >= 5) {
-      return toast("You can only select 5 seats");
     }
     setSelectedSeats(prev =>
       prev.includes(seatId)
@@ -43,14 +48,18 @@ const SeatLayout = () => {
       <div className="seat-group">
         {Array.from({ length: count }, (_, i) => {
           const seatId = `${row}${i + 1}`;
+          const price = getSeatPrice(seatId);
+
           return (
-            <button
-              key={seatId}
-              onClick={() => handleSeatClick(seatId)}
-              className={`seat-btn ${selectedSeats.includes(seatId) ? 'selected' : ''}`}
-            >
-              {seatId}
-            </button>
+            <div key={seatId} className="seat-wrapper">
+              <button
+                onClick={() => handleSeatClick(seatId)}
+                className={`seat-btn ${selectedSeats.includes(seatId) ? 'selected' : ''}`}
+              >
+                {seatId}
+              </button>
+              <p className="seat-price">₹{price}</p>
+            </div>
           );
         })}
       </div>
@@ -65,6 +74,7 @@ const SeatLayout = () => {
 
   return (
     <div className="seat-layout-container">
+
       <div className="timings-container">
         <p className="timings-title">Available timings</p>
         <div className="timings-list">
@@ -86,28 +96,29 @@ const SeatLayout = () => {
         <BlurCircle bottom="0" right="0" />
 
         <h1 className="seats-title">Select your seat</h1>
+
         <img src={assets.screenImage} alt="screen" className="screen-img" />
         <p className="screen-text">SCREEN SIDE</p>
 
         <div className="seat-groups">
-          <div className="group-top">
-            {groupRows[0].map(row => renderSeats(row))}
-          </div>
-
-          <div className="group-rest">
-            {groupRows.slice(1).map((group, idx) => (
-              <div key={idx} className="group-block">
-                {group.map(row => renderSeats(row))}
-              </div>
-            ))}
-          </div>
+          {groupRows.map((group, idx) => (
+            <div key={idx} className="group-block">
+              {group.map(row => renderSeats(row))}
+            </div>
+          ))}
         </div>
 
-        {/* UPDATED BUTTON */}
         <button
           onClick={() => {
             if (!selectedTime) return toast("Select a time!");
-            navigate(`/payment/${id}/${date}/${selectedTime.time}`);
+            const pricing = selectedSeats.map(seat => ({
+              seat,
+              price: getSeatPrice(seat)
+            }));
+            navigate(
+              `/payment/${id}/${date}/${selectedTime.time}`,
+              { state: { seats: selectedSeats, pricing } }
+            );
           }}
           className="checkout-btn"
         >
@@ -115,6 +126,7 @@ const SeatLayout = () => {
           <ArrowRightIcon strokeWidth={3} className="arrow-icon" />
         </button>
       </div>
+
     </div>
   );
 };
