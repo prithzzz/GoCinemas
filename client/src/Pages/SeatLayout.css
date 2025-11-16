@@ -24,7 +24,7 @@
 }
 
 .timings-title {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
   font-weight: 600;
   padding-left: 24px;
 }
@@ -60,13 +60,17 @@
   height: 16px;
 }
 
+.timing-item p {
+  color: white;
+}
+
 /* Seat layout main */
 .seats-main {
   flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;     /* THIS centers everything */
   margin-top: 32px;
 }
 
@@ -87,39 +91,38 @@
   margin-bottom: 24px;
 }
 
-/* Seat groups */
-.seat-groups {
+/* PRICE LABEL + SEATS (CENTERED) */
+.price-row {
+  display: flex;
+  justify-content: center;     /* CENTER the whole row under screen */
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Price label on the left side of the seat rows */
+.price-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  min-width: 60px;
+  text-align: right;
+  padding-top: 8px;
+}
+
+/* Column of seat groups */
+.seat-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-size: 0.75rem;
-  color: #D1D5DB;
-  margin-top: 40px;
+  gap: 14px;
+  align-items: center;       /* THIS centers all seat rows */
 }
 
-.group-top {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.group-rest {
-  display: flex;
-  gap: 44px;
-}
-
-.group-block {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Seats */
+/* Seat rows */
 .seat-row {
   display: flex;
   gap: 8px;
-  margin-top: 8px;
 }
 
 .seat-group {
@@ -129,12 +132,14 @@
   justify-content: center;
 }
 
+/* Seat button */
 .seat-btn {
   width: 32px;
   height: 32px;
   border-radius: 8px;
   border: 1px solid rgba(248, 69, 101, 0.6);
   background-color: transparent;
+  color: white;
   cursor: pointer;
   transition: all 0.2s;
 }

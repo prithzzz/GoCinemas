@@ -13,6 +13,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+
       {/* LOGO */}
       <Link to="/" className="navbar-logo">
         <img src={assets.logo} alt="GoCinemas Logo" className="logo-img" />
@@ -20,7 +21,8 @@ const Navbar = () => {
 
       {/* RIGHT SECTION: LINKS + LOGIN BUTTON */}
       <div className="navbar-actions">
-        {/* NAV LINKS (now aligned beside Login) */}
+
+        {/* DESKTOP NAV LINKS */}
         <div className="navbar-links desktop-only">
           <Link onClick={() => scrollTo(0, 0)} to="/">Home</Link>
           <Link onClick={() => scrollTo(0, 0)} to="/search">Movies</Link>
@@ -49,11 +51,29 @@ const Navbar = () => {
       {/* MOBILE NAV LINKS */}
       <div className={`navbar-links mobile-menu ${isOpen ? 'open' : ''}`}>
         <X className="close-icon" onClick={() => setIsOpen(false)} />
-        
-        <Link onClick={() => { scrollTo(0,0); setIsOpen(false); }} to="/">Home</Link>
-        <Link onClick={() => { scrollTo(0,0); setIsOpen(false); }} to="/search">Movies</Link>
-        <Link onClick={() => { scrollTo(0,0); setIsOpen(false); }} to="/my-tickets">My Tickets</Link>
+
+        <Link 
+          onClick={() => { scrollTo(0,0); setIsOpen(false); }} 
+          to="/"
+        >
+          Home
+        </Link>
+
+        <Link 
+          onClick={() => { scrollTo(0,0); setIsOpen(false); }} 
+          to="/search"
+        >
+          Movies
+        </Link>
+
+        <Link 
+          onClick={() => { scrollTo(0,0); setIsOpen(false); }} 
+          to="/my-bookings" 
+        >
+          My Tickets
+        </Link>
       </div>
+
     </div>
   );
 };
