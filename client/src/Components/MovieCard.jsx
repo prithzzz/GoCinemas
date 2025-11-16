@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { StarIcon } from 'lucide-react';
 import './MovieCard.css';
 import timeFormat from '../Components/lib/timeFormat.js';
+import { useAppContext } from '../context/AppContext.jsx';
 
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
+  const {image_base_url} = useAppContext()
 
   return (
     <div className="movie-card">

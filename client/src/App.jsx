@@ -13,9 +13,12 @@ import BookingConfirmation from './Pages/BookingConfirmation';
 
 import { Toaster } from 'react-hot-toast';
 import './App.css';
+import { useAppContext } from './context/AppContext';
 
 const App = () => {
   const isAdminRoute = useLocation().pathname.startsWith('/admin');
+
+  const { user } = useAppContext()
 
   return (
     <>

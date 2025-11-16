@@ -5,9 +5,11 @@ import BlurCircle from './BlurCircle';
 import MovieCard from './MovieCard';
 import './FeaturedSection.css';
 import { dummyShowsData } from '../assets/assets';
+import { useAppContext } from '../context/AppContext';
 
 const FeaturedSection = () => {
   const navigate = useNavigate();
+  const {shows} = useAppContext()
 
   return (
     <div className="featured-section">
