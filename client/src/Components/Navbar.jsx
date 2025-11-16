@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="navbar-links desktop-only">
           <Link onClick={() => scrollTo(0, 0)} to="/">Home</Link>
           <Link onClick={() => scrollTo(0, 0)} to="/search">Movies</Link>
-          <Link onClick={() => scrollTo(0, 0)} to="/my-tickets">My Tickets</Link>
+          <Link onClick={() => scrollTo(0, 0)} to="/my-bookings">My Tickets</Link>
         </div>
 
         {/* LOGIN / USER MENU */}

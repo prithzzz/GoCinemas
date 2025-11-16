@@ -31,9 +31,11 @@ const SeatLayout = () => {
     if (!selectedSeats.includes(seatId) && selectedSeats.length >= 5) {
       return toast("You can only select 5 seats");
     }
-    setSelectedSeats(prev => prev.includes(seatId)
-      ? prev.filter(seat => seat !== seatId)
-      : [...prev, seatId]);
+    setSelectedSeats(prev =>
+      prev.includes(seatId)
+        ? prev.filter(seat => seat !== seatId)
+        : [...prev, seatId]
+    );
   };
 
   const renderSeats = (row, count = 9) => (
@@ -63,7 +65,6 @@ const SeatLayout = () => {
 
   return (
     <div className="seat-layout-container">
-      {/* Available timings */}
       <div className="timings-container">
         <p className="timings-title">Available timings</p>
         <div className="timings-list">
@@ -80,7 +81,6 @@ const SeatLayout = () => {
         </div>
       </div>
 
-      {/* Seat layout */}
       <div className="seats-main">
         <BlurCircle top="-100px" left="-100px" />
         <BlurCircle bottom="0" right="0" />
@@ -103,8 +103,12 @@ const SeatLayout = () => {
           </div>
         </div>
 
+        {/* UPDATED BUTTON */}
         <button
-          onClick={() => navigate('/my-bookings')}
+          onClick={() => {
+            if (!selectedTime) return toast("Select a time!");
+            navigate(`/payment/${id}/${date}/${selectedTime.time}`);
+          }}
           className="checkout-btn"
         >
           Proceed to Checkout
